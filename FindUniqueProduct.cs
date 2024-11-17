@@ -19,6 +19,11 @@ public class Program
 
     public static string GetLastUniqueProduct(string[] products)
     {
+        // Check for null or empty array and return null early
+        if (products == null || products.Length == 0)
+        {
+            return null;
+        }
         // Group products by their occurrences and filter out those that appear more than once
         var uniqueProducts = products
             .GroupBy(product => product)
